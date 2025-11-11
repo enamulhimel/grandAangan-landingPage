@@ -3,6 +3,7 @@ import Gallery from "./components/Gallery";
 import ContactForm from "./components/ContactForm";
 import FloatingButtons from "./components/FloatingButtons";
 import PropertyTabs from "./components/PropertyTabs";
+import Locations from "./components/Locations";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <Gallery />
       <PropertyTabs />
+      <Locations />
       <ContactForm />
       <FloatingButtons />
     </>
