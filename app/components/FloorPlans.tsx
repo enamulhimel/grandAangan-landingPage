@@ -1,20 +1,29 @@
 // app/components/FloorPlans.tsx
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect } from "react";
+
+// Import images from the public folder
+import typical from "../../public/typical-floor.jpeg";
+import ground from "../../public/ground-floor.jpeg";
+import roof from "../../public/roof.jpeg";
+
 
 type Floor = "typical" | "ground" | "roof" | "ground-interior";
 
-const images: Record<Floor, string> = {
-  typical: "https://i.pinimg.com/474x/4b/d0/4e/4bd04ecdc24ab75bc93d1e982624f7bd.jpg",
-  ground: "https://i.ytimg.com/vi/F54saEf9phA/maxresdefault.jpg",
-  roof: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLZpGfzxDDBTu959_45pkZtVIx0SXNVDJs2A&s",
-  "ground-interior": "https://i.pinimg.com/474x/4b/d0/4e/4bd04ecdc24ab75bc93d1e982624f7bd.jpg",
+// Local images object
+const images: Record<Floor, any> = {
+  typical,
+  ground,
+  roof,
+  "ground-interior": ground, // fallback
 };
 
 export default function FloorPlans() {
   const [active, setActive] = useState<Floor>("typical");
 
+  // Automatically show ground-interior after 40s
   useEffect(() => {
     if (active === "ground") {
       const timer = setTimeout(() => setActive("ground-interior"), 40000);
@@ -38,27 +47,27 @@ export default function FloorPlans() {
                 : "bg-gray-200 text-gray-700 hover:bg-gray-300"
             }`}
           >
-            {floor === "typical" ? "Typical Floor" : floor === "ground" ? "Ground Floor" : "Roof Floor"}
+            {floor === "typical"
+              ? "Typical Floor"
+              : floor === "ground"
+              ? "Ground Floor"
+              : "Roof Floor"}
           </button>
         ))}
       </div>
 
       {/* Image */}
-      <div className="relative rounded-lg overflow-hidden bg-gray-100">
-        <img
+      <div className="flex justify-center">
+        <div className="relative w-[90%] sm:w-[400px] md:w-[600px] h-[300px] sm:h-[350px] md:h-[800px] rounded-lg overflow-hidden bg-gray-100">
+        <Image
           src={images[active]}
-          alt={active}
-          className="w-full h-auto object-cover"
-        />
+          alt={`${active} plan`}
+          fill
+          className="object-contain"
+          />
+        </div>
+    </div>
 
-        {/* Roof Branding */}
-        {/* {active === "roof" && (
-          <div className="absolute bottom-6 right-6 bg-white bg-opacity-95 rounded-lg p-4 shadow-lg text-right">
-            <div className="text-xl font-bold text-gray-800">THE GRAND MANGAN</div>
-            <div className="text-sm text-gray-600">by DREAMWAY</div>
-          </div>
-        )} */}
-      </div>
     </section>
   );
 }

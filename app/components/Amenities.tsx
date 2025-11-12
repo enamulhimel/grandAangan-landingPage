@@ -1,5 +1,6 @@
 // app/components/Amenities.tsx
 import { FaArrowRight } from "react-icons/fa";
+import { FaAngleRight } from "react-icons/fa";
 const amenities = [
   ["drawing", "family living", "Sub-station", "CC Camera", "Prayer Zone", "Gardening"],
   ["dining", "Car Parking", "Generator", "Conference Room", "BBQ Zone", "Swimming Pool"],
@@ -15,8 +16,8 @@ export default function Amenities() {
           <ul key={i} className="space-y-3">
             {col.map((item) => (
               <li key={item} className="flex items-center gap-2">
-                <span className="text-green-600 font-bold text-lg"><FaArrowRight /></span>
-                <span className="capitalize text-xl">{item}</span>
+                <span className="text-red-600 font-bold text-sm"><FaAngleRight /></span>
+                <span className="capitalize text-lg">{item}</span>
               </li>
             ))}
           </ul>

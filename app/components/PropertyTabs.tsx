@@ -6,20 +6,24 @@ import { motion } from "framer-motion";
 import Overview from "./Overview";
 import Amenities from "./Amenities";
 import FloorPlans from "./FloorPlans";
+import Location from "./Locations";
+
 
 export default function PropertyTabs() {
-  const tabs = ["Overview", "Amenities", "Floor Plan"];
+  const tabs = ["Overview", "Amenities", "Floor Plan","Location"];
   const [activeTab, setActiveTab] = useState("Overview");
 
   const overviewRef = useRef<HTMLDivElement>(null);
   const amenitiesRef = useRef<HTMLDivElement>(null);
   const floorRef = useRef<HTMLDivElement>(null);
+  const locationRef = useRef<HTMLDivElement>(null);
 
   const scrollToSection = (section: string) => {
     const refs: Record<string, React.RefObject<HTMLDivElement | null>> = {
       Overview: overviewRef,
       Amenities: amenitiesRef,
       "Floor Plan": floorRef,
+      location: locationRef,
     };
 
     const ref = refs[section];
@@ -35,6 +39,7 @@ export default function PropertyTabs() {
         { name: "Overview", top: overviewRef.current?.offsetTop ?? 0 },
         { name: "Amenities", top: amenitiesRef.current?.offsetTop ?? 0 },
         { name: "Floor Plan", top: floorRef.current?.offsetTop ?? 0 },
+        { name: "Location", top: locationRef.current?.offsetTop ?? 0 },
       ].sort((a, b) => b.top - a.top);
 
       for (const { name, top } of positions) {
@@ -52,7 +57,7 @@ export default function PropertyTabs() {
   return (
     <>
       {/* Sticky Tab Bar */}
-      <div className="sticky top-0 z-50 bg-white shadow-md">
+      <div className="sticky top-0 z-30 bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex gap-8 border-b border-gray-200 overflow-x-auto scrollbar-hide">
             {tabs.map((tab) => (
@@ -92,6 +97,9 @@ export default function PropertyTabs() {
 
         <div ref={floorRef} className="pt-8">
           <FloorPlans />
+        </div>
+        <div ref={locationRef} className="pt-8">
+          <Location />
         </div>
       </div>
     </>
