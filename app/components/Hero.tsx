@@ -22,7 +22,7 @@ export default function HeroSection() {
       {/* Text section */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold">
-          The Grand Aangan (2450 sft)
+          The Grand Aangan
         </h1>
 
         <p className="mt-3 text-lg md:text-xl font-medium opacity-90">

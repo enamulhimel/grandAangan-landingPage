@@ -245,19 +245,19 @@ export default function Gallery() {
           {/* Main Image */}
           <div className="relative w-full h-[220px] sm:h-[320px] md:h-[380px] lg:h-[520px] rounded-xl overflow-hidden">
             {/* Left arrow */}
-            {/* <button
+            <button
               onClick={handlePrev}
               className="absolute left-2 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full p-2 sm:p-3 z-20"
             >
               <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" />
-            </button> */}
+            </button>
             {/* Right arrow */}
-            {/* <button
+            <button
               onClick={handleNext}
               className="absolute right-2 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full p-2 sm:p-3 z-20"
             >
               <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" />
-            </button> */}
+            </button>
             <Image
               src={images[activeIndex]}
               alt="Gallery image"
@@ -288,7 +288,7 @@ export default function Gallery() {
         {/* ✅ RIGHT INFO SECTION */}
         <div className="w-full lg:w-2/6 bg-white shadow-lg rounded-xl p-5 flex flex-col">
           <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl leading-tight">
-            The Grand Aangan (2450 sft)
+            The Grand Aangan 
           </h1>
           <p className="text-lg sm:text-xl text-gray-500 my-2">
             Shornali Abashon
@@ -302,7 +302,13 @@ export default function Gallery() {
             </div>
             <div className="bg-gray-100 p-4 md:p-5 rounded-md">
               <p className="text-gray-500">Flat Size</p>
-              <p className="font-bold">2450 sft</p>
+              <p className="font-bold">A & B: 2450 SFT</p>
+              <p className="font-bold">C & D: 2050 SFT</p>
+              <p className="font-bold"> Sky Villa: 4900 SFT</p>
+            </div>
+            <div className="bg-gray-100 p-4 md:p-5 rounded-md">
+              <p className="text-gray-500">Bedrooms</p>
+              <p className="font-bold">4</p>
             </div>
             <div className="bg-gray-100 p-4 md:p-5 rounded-md">
               <p className="text-gray-500">Building Type</p>
@@ -315,10 +321,8 @@ export default function Gallery() {
             <div className="bg-gray-100 p-4 md:p-5 rounded-md">
               <p className="text-gray-500">Facing</p>
               <p className="font-bold">South Facing</p>
-            </div>
-            <div className="bg-gray-100 p-4 md:p-5 rounded-md">
-              <p className="text-gray-500">Bedrooms</p>
-              <p className="font-bold">4</p>
+              <p className="font-bold">North Facing</p>
+              <p className="font-bold">West Facing</p>
             </div>
           </div>
           <hr className="text-gray-300 my-6" />
