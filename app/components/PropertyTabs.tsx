@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Overview from "./Overview";
 import Amenities from "./Amenities";
 import FloorPlans from "./FloorPlans";
-import Location from "./Locations";
+import Location from "./Location";
 
 
 export default function PropertyTabs() {
@@ -57,14 +57,14 @@ export default function PropertyTabs() {
   return (
     <>
       {/* Sticky Tab Bar */}
-      <div className="sticky top-0 z-30 bg-white shadow-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex gap-8 border-b border-gray-200 overflow-x-auto scrollbar-hide">
+      <div className="sticky top-0 z-30 bg-white shadow-md cursor-pointer">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+          <div className="flex gap-8 border-b border-gray-200 overflow-x-auto scrollbar-hide cursor-pointer">
             {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => scrollToSection(tab)}
-                className={`relative py-4 px-1 text-lg font-semibold transition-colors whitespace-nowrap ${
+                className={`relative py-4 px-1 text-lg font-semibold transition-colors whitespace-nowrap${
                   activeTab === tab
                     ? "text-red-600"
                     : "text-gray-600 hover:text-gray-900"
@@ -86,7 +86,7 @@ export default function PropertyTabs() {
       </div>
 
       {/* Sections */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div ref={overviewRef} className="pt-8">
           <Overview />
         </div>

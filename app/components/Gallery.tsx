@@ -208,10 +208,10 @@ export default function Gallery() {
 
     emailjs
       .send(
-        "service_vuy7ff7", // Replace with your EmailJS Service ID (e.g., service_abc123)
-        "template_deo44ki", // Replace with your EmailJS Template ID (e.g., template_def456)
+        "service_4irzyfj", // Replace with your EmailJS Service ID (e.g., service_abc123)
+        "template_ppfk37f", // Replace with your EmailJS Template ID (e.g., template_def456)
         templateParams,
-        "N-_acqBrC-7Yz8rEi" // Replace with your EmailJS User ID (e.g., user_ghi789)
+        "PtI8wiqrzGPP0UqQc" // Replace with your EmailJS User ID (e.g., user_ghi789)
       )
       .then(
         () => {

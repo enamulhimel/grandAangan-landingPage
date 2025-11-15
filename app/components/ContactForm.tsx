@@ -51,10 +51,10 @@ export default function ContactForm() {
 
     try {
       await emailjs.send(
-        "service_vuy7ff7",
-        "template_deo44ki",
+        "service_k1e7onb",
+        "template_earudcn",
         templateParams,
-        "N-_acqBrC-7Yz8rEi"
+        "PtI8wiqrzGPP0UqQc"
       );
 
       setStatus("success");

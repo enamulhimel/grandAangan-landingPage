@@ -3,7 +3,7 @@ import Gallery from "./components/Gallery";
 import ContactForm from "./components/ContactForm";
 import FloatingButtons from "./components/FloatingButtons";
 import PropertyTabs from "./components/PropertyTabs";
-import Locations from "./components/Locations";
+import Locations from "./components/Location";
 import Footer from "./components/Footer";
 
 export default function Home() {
